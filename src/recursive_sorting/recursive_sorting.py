@@ -9,9 +9,23 @@ def merge( arrA, arrB ):
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
-    # TO-DO
 
-    return arr
+    splits = [[i] for i in arr] #start out by splitting the array into arrays each containing only 1 number
+
+    while(len(splits[0]) != len(arr)):#continue while we haven't merged all splits back down into a single sorted array again
+        newSplits = []
+        for(i in range(0, len(splits), 2)):#loop over splits in increments of 2
+            if(i + 1 < len(splits) - 1):
+                newSplits.append(merge(splits[i], splits[i + 1]))
+            else:#splits is odd, so splits[i] doesn't have a partner to the right to merge with.
+                newSplits.append(splits[i])
+
+        
+
+
+
+
+
 
 
 # STRETCH: implement an in-place merge sort algorithm
